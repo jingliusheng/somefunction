@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>保存、读取本地存储</h1>
+		<button onclick="save()">把以下信息保存到本地</button>
+		<p>1:小明<br />2:嘿嘿</p>
+		<button onclick="read()">从本地拿出数据</button>
+	</body>
+</html>
+<script src="js/store.js"></script>
+<script type="text/javascript">
+	function save(){
+		saveToLocal('人名','1','小明');
+		saveToLocal('人名','2','嘿嘿');
+	}
+	function read(){
+		alert(loadFromLocal('人名','1','这是默认值'));
+		alert(loadFromLocal('人名','2','这是默认值'));
+		alert(loadFromLocal('人名','3','本地存储中未找到，返回这句话'));
+	}
+</script>

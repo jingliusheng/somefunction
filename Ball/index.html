@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		  body{
+		  	margin: 0;
+		  	padding: 0;
+		  	position: absolute;
+		  	width: 100%;
+		  	height: 100%;
+		  }
+		  #target{
+		  	position: absolute;
+		  	left: 350px;
+		  	top: 350px;
+		  	width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgb(220, 20, 20);
+		  }
+          #add-inner{
+          	position:absolute;
+          	width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgb(0, 160, 220);
+          }
+		</style>
+	</head>
+	<body>
+		<button>来一个小球0</button>
+		<div id="target"></div>
+		<div id="add-inner"></div>
+	</body>
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/paowuxian.js"></script>
+<script type="text/javascript">
+	$("body").click(function(event){
+		/*  getBoundingClientRect() 这个方法是返回某个元素的矩阵属性，上下左右距离
+		var rect = $(this)[0].getBoundingClientRect();*/
+		var e=event || window.event;
+		var x = e.clientX;
+		var y = e.clientY;
+		$('#add-inner').css({
+            'left':x-8+'px',
+            'top':y-8+'px'
+		});
+	});
+
+	var element = document.getElementById("add-inner"),
+    target = document.getElementById("target");
+	// 抛物线元素的的位置标记
+	var parabola = funParabola(element, target).mark();
+	// 抛物线运动的触发
+	document.body.onclick = function() {
+	    element.style.marginLeft = "0";
+	    element.style.marginTop = "0";
+	    parabola.init();
+	};
+
+</script>

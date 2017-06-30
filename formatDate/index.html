@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时间格式处理</title>
+	</head>
+	<body>
+		<div id="dat"></div>
+	</body>
+</html>
+<script src="js/date.js"></script>
+<script type="text/javascript">
+	//yyyy-MM-dd hh:mm:ss 这个是输出的格式
+	var Odate = new Date();
+	var time=formatDate(Odate,'yyyy/MM-dd hh/mm:ss');
+	document.getElementById('dat').innerHTML=time;
+</script>
