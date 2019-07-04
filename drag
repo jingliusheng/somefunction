@@ -40,3 +40,4 @@ function drag() {
     e.preventDefault();
   }
 }
+
