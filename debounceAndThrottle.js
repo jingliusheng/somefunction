@@ -31,6 +31,7 @@ window.addEventListener('scroll', debounce(handle, 1000));
  * 
  * 函数节流主要有两种实现方法：时间戳和定时器。
  */
+
 /**
  * 时间戳
  */
